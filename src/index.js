@@ -3,8 +3,13 @@ import { fetchBreeds, fetchCatByBreed } from "./js/cat-api";
 const loading = document.querySelector(".loader");
 const select = document.querySelector(".breed-select");
 const divCatInfo = document.querySelector(".cat-info");
+const errorInfo = document.querySelector(".error");
+
+
 loading.classList.remove("hidden");
 select.classList.add("hidden");
+errorInfo.classList.add("hidden");
+
 
 const dataToSelect = (data => {
  const childresSelect = data.map(({ id, name }) => {

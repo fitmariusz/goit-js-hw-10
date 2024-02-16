@@ -7,6 +7,14 @@ body{
     display: none;
 }
 
+.checkCats{
+    position: relative;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
 /* .loader {
     font-size: 48px;
     color: #FFF;
@@ -32,7 +40,7 @@ body{
     bottom: 0px;
     background: linear-gradient(#FF3D00 100%, transparent 0) no-repeat;
     background-size: 0% auto;
-    animation: 10s lineGrow linear infinite;
+    animation: 1s lineGrow linear infinite;
 }
 
 @keyframes lineGrow {
@@ -49,7 +57,7 @@ body{
 
 
 div.polaroid {
-    width: 30%;
+    width: 50%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
@@ -60,13 +68,15 @@ div.polaroid {
     max-width: 80%;
     margin: auto;
     border: 1px;
+    border-radius: 5px;
     /* border-color: black; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition-duration: 2s;
     
 }
-.imgCats:hover{
-    transform: scale(2);
+.imgCats:hover,
+.imgCats:focus{
+    transform: scale(1.8);
 }
 div.container {
     text-align: center;
