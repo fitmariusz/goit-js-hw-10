@@ -2,36 +2,62 @@ import axios from "axios";
 import Notiflix from 'notiflix';
 
 import SlimSelect from 'slim-select'
-
-
-
+const cats = [];
 
 import { fetchBreeds, fetchCatByBreed } from "./js/cat-api";
 const loading = document.querySelector(".load");
-const select = document.querySelector(".breed-select");
+const select = document.querySelector("#selectElement");
+console.log(select);
 const divCatInfo = document.querySelector(".cat-info");
 const errorInfo = document.querySelector(".error");
 loading.classList.remove("hidden");
-select.classList.add("hidden");
+
 errorInfo.classList.add("hidden");
 
 const dataToSelect = (data => {
   if (typeof(data) == 'object') {
-    const childresSelect = data.map(({ id, name }) => {
-      var opt = document.createElement('option');
-      opt.value = id;
-      opt.innerHTML = name;
-      select.appendChild(opt);
+    data.map(({ id, name }) => {
+      cats.push({ text: name, value: id });
     });
     loading.classList.add("hidden");
     select.classList.remove("hidden");
+    new SlimSelect({
+      select: '#selectElement',
+      settings: {
+      placeholderText: 'Select Value',
+      disabled: false,
+    },
+    data: cats,
+  });
+
+
+
   } else {
     Notiflix.Report.failure('Error 404', data, 'OK');
     loading.textContent = "Error 404";
     document.body.style.background = 'red'
   }
-
+  
 });
+
+
+// const dataToSelect = (data => {
+//   if (typeof(data) == 'object') {
+//     const childresSelect = data.map(({ id, name }) => {
+//       var opt = document.createElement('option');
+//       opt.value = id;
+//       opt.innerHTML = name;
+//       select.appendChild(opt);
+//     });
+//     loading.classList.add("hidden");
+//     select.classList.remove("hidden");
+//   } else {
+//     Notiflix.Report.failure('Error 404', data, 'OK');
+//     loading.textContent = "Error 404";
+//     document.body.style.background = 'red'
+//   }
+
+// });
 
 const catInfo = (dataCat => {
   if (dataCat != undefined){
