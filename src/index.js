@@ -1,5 +1,11 @@
 import axios from "axios";
 import Notiflix from 'notiflix';
+
+import SlimSelect from 'slim-select'
+
+
+
+
 import { fetchBreeds, fetchCatByBreed } from "./js/cat-api";
 const loading = document.querySelector(".load");
 const select = document.querySelector(".breed-select");
