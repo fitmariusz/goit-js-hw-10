@@ -5,14 +5,18 @@ axios.defaults.headers.common["x-api-key"] = "live_BaMWVDpC0ci7VaQwGwH7WaJK3MErB
 export const fetchBreeds = () => {
     
     return axios.get(`https://api.thecatapi.com/v1/breeds`)
-        .then(res => res.data);
+        .then(res => res.data)
+        .catch(error => error.message);
     
     
 };
 
+
+
+
 export const fetchCatByBreed = (breedId) => {
-    // console.log(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`);
 
     return axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
-        .then(res => res.data[0]);
+        .then(res => res.data[0])
+        .catch(error => console.log(error));
 };

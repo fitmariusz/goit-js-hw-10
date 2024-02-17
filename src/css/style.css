@@ -15,45 +15,32 @@ body{
     text-align: center;
 }
 
-/* .loader {
-    font-size: 48px;
-    color: #FFF;
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
+.loader {
+    display: block;
     position: relative;
+    height: 12px;
+    width: 80%;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .loader:after {
-    content: 'Loading';
-    position: relative;
-    z-index: 5;
-}
-
-.loader:before {
     content: '';
-    height: 6px;
-    border: 1px solid;
-    border-radius: 10px;
-    width: 100%;
     position: absolute;
-    bottom: 0px;
-    background: linear-gradient(#FF3D00 100%, transparent 0) no-repeat;
-    background-size: 0% auto;
-    animation: 1s lineGrow linear infinite;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #FF3D00;
+    animation: 0.8s prog ease-in infinite;
 }
 
-@keyframes lineGrow {
+@keyframes prog {
     to {
-        background-size: 100% auto
+        width: 100%;
     }
-} */
-
-
-/*
-.label{
-    font-size: small;
-} */
+}
 
 
 div.polaroid {
@@ -74,6 +61,7 @@ div.polaroid {
     transition-duration: 2s;
     
 }
+
 .imgCats:hover,
 .imgCats:focus{
     transform: scale(1.8);
